@@ -11,13 +11,13 @@ str(stevens)
 summary(stevens)
 ```
 ```{r}
-install.packages("caTools")
+##install.packages("caTools")
 library(caTools)
 set.seed(3000)
 splittingData <- sample.split(stevens$Reverse, SplitRatio = 0.7)
 TrainingData <- subset(stevens, splittingData == "TRUE")
 TestingData <- subset(stevens, splittingData == "FALSE")
-install.packages("rpart")
+##install.packages("rpart")
 library(rpart)
 install.packages("rpart.plot")
 ```
