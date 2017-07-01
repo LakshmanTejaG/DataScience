@@ -6,18 +6,48 @@ output: html_document
 ---
 
 ```{r}
+# Read in the data
 stevens <- read.csv("~/DataScience/Data_Fluency/EdX_The_Analytics_Edge/Unit 4/Lecture 1-Judge, Jury, and Classifier An Introduction to Trees/stevens.csv")
 str(stevens)
 summary(stevens)
 ```
 ```{r}
-##install.packages("caTools")
+# Split the data
 library(caTools)
 set.seed(3000)
-splittingData <- sample.split(stevens$Reverse, SplitRatio = 0.7)
-TrainingData <- subset(stevens, splittingData == "TRUE")
-TestingData <- subset(stevens, splittingData == "FALSE")
-##install.packages("rpart")
+spl = sample.split(stevens$Reverse, SplitRatio = 0.7)
+Train = subset(stevens, spl==TRUE)
+Test = subset(stevens, spl==FALSE)
+```
+```{r}
+# Install rpart library
+#install.packages("rpart")
 library(rpart)
-install.packages("rpart.plot")
+#install.packages("rpart.plot")
+library(rpart.plot)
+```
+```{r}
+# CART model
+StevensTree = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, method="class", minbucket=25)
+
+prp(StevensTree)
+```
+```{r}
+# Make predictions
+PredictCART = predict(StevensTree, newdata = Test, type = "class")
+table(Test$Reverse, PredictCART)
+(41+71)/(41+36+22+71)
+```
+```{r}
+# ROC curve
+#install.packages("ROCR")
+library(ROCR)
+
+PredictROC = predict(StevensTree, newdata = Test)
+PredictROC
+
+pred = prediction(PredictROC[,2], Test$Reverse)
+perf = performance(pred, "tpr", "fpr")
+plot(perf)
+
 ```
