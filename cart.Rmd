@@ -1,0 +1,23 @@
+---
+title: "CART"
+author: "LakshmanTeja"
+date: "June 30, 2017"
+output: html_document
+---
+
+```{r}
+stevens <- read.csv("~/DataScience/Data_Fluency/EdX_The_Analytics_Edge/Unit 4/Lecture 1-Judge, Jury, and Classifier An Introduction to Trees/stevens.csv")
+str(stevens)
+summary(stevens)
+```
+```{r}
+install.packages("caTools")
+library(caTools)
+set.seed(3000)
+splittingData <- sample.split(stevens$Reverse, SplitRatio = 0.7)
+TrainingData <- subset(stevens, splittingData == "TRUE")
+TestingData <- subset(stevens, splittingData == "FALSE")
+install.packages("rpart")
+library(rpart)
+install.packages("rpart.plot")
+```
