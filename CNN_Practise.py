@@ -5,6 +5,9 @@ Created on Mon Oct  7 19:22:49 2019
 
 @author: lakshmanteja
 """
+%reset -f
+%clear -f
+# CTRL + I to get arguments for each method
 
 # Part 1 - Building the CNN
 
