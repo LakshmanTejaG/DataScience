@@ -1,5 +1,5 @@
 <b><a href="https://www.linkedin.com/in/g-lakshman-teja-39a35420/">G.Lakshman Teja</a></b></br>
-<marquee>Its a Repository of ML|AI|NLP|Deep Learning(ANN & CNN) using Python and R</marquee></br>
+<b>Its a Repository of ML|AI|NLP|Deep Learning(ANN & CNN) using Python and R</b></br>
 
 About me:</br>
 
@@ -8,7 +8,7 @@ About me:</br>
 --------------
 Key Skills:
 --------------
-* Data Science: Machine Learning | NLP with R / Python (Pandas, NumPy ,Scikit Learn, NLTK & Keras).
+* Data Science: Machine Learning | NLP | Deep Learning(ANN & CNN) with Python (Pandas, NumPy ,Scikit Learn, NLTK & Keras).
 * NGS/High-Throughput Data Analysis (DNA-SEQ | RNA-SEQ | META-SEQ |CHIP-SEQ).
 * Scientific Programming: Python, R, Shell & AWK
 * High Performance Computing:IBM-LSF | AWS Cloud(S3, Docker Images &EC2 ).
