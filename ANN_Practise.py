@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sat Oct  5 18:54:48 2019
-
 @author: lakshmanteja
 """
 %reset -f
+%clear -f
 
 # Artificial Neural Network
 # Installing Newral Network Libraries from Spyder ipython console
